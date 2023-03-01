@@ -10,17 +10,12 @@ class Title extends React.Component {
   }
 }
 
-// FALTA VERIFICAR O PROPTYPES DE HEADLINE
-
 Title.defaultProps = {
-  headline: [],
+  headline: 'Planetas',
 };
 
 Title.propTypes = {
-  headline: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    imagem: PropTypes.string,
-  })),
+  headline: PropTypes.string,
 };
 
 export default Title;
