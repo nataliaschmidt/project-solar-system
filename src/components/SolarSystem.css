@@ -1,0 +1,78 @@
+.solar-system {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.solar-system h2 {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.line {
+  border: 1px solid white;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  z-index: -1;
+}
+
+.container-planet {
+  display: flex;
+  gap: 20px;
+}
+
+.container-planet img[ alt = 'Planeta Merc\FArio' ] {
+  height: 31px;
+  object-fit: contain;
+  width: 41px;
+}
+
+.container-planet img[ alt = 'Planeta V\EAnus' ] {
+  height: 76px;
+  object-fit: contain;
+  width: 102px;
+}
+
+.container-planet img[ alt = 'Planeta Terra' ] {
+  height: 79px;
+  object-fit: contain;
+  width: 106px;
+}
+
+.container-planet img[ alt = 'Planeta Marte' ] {
+  height: 50px;
+  object-fit: contain;
+  width: 66px;
+}
+
+.container-planet img[ alt = 'Planeta J\FApiter' ] {
+  height: 204px;
+  object-fit: contain;
+  width: 272px;
+}
+
+.container-planet img[ alt = 'Planeta Saturno' ] {
+  height: 210px;
+  object-fit: contain;
+  transform: rotate(-16.53deg);
+  width: 282px;
+}
+
+.container-planet img[ alt = 'Planeta Urano' ] {
+  height: 109px;
+  object-fit: contain;
+  width: 144px;
+}
+
+.container-planet img[ alt = 'Planeta Netuno' ] {
+  height: 107px;
+  object-fit: contain;
+  width: 144px;
+}

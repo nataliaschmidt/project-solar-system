@@ -1,0 +1,47 @@
+.mission-card {
+  animation: shadow-pulse 2s infinite;
+  background: rgba(24, 26, 37, 0.5);
+  /* border: 1px solid white; */
+  border-radius: 17px;
+  box-shadow: 5px 5px 15px 2px rgba(255, 255, 255, 0.691) , -5px -5px 10px 2px rgb(48, 47, 47) , inset 5px 5px 15px 2px rgba(255, 255, 255, 0.691) , inset -5px -5px 10px 2px rgb(48, 47, 47);
+  height: 192px;
+  mix-blend-mode: hard-light;
+  width: 496px;
+}
+
+@keyframes shadow-pulse {
+
+  0% {
+    box-shadow: 5px 5px 10px 2px rgba(255, 255, 255, 0.464) , -5px -5px 10px 2px rgb(48, 47, 47) , inset 5px 5px 10px 2px rgba(255, 255, 255, 0.464) , inset -5px -5px 10px 2px rgb(48, 47, 47);
+  }
+
+  50% {
+    box-shadow: 8px 8px 15px 4px rgba(255, 255, 255, 0.464) , -8px -8px 15px 4px rgb(48, 47, 47) , inset 8px 8px 15px 4px rgba(255, 255, 255, 0.464) , inset -8px -8px 15px 4px rgb(48, 47, 47);
+  }
+
+  100% {
+    box-shadow: 5px 5px 10px 2px rgba(255, 255, 255, 0.464) , -5px -5px 10px 2px rgb(48, 47, 47) , inset 5px 5px 10px 2px rgba(255, 255, 255, 0.464) , inset -5px -5px 10px 2px rgb(48, 47, 47);
+  }
+}
+
+.mission-card p:not( [ data-testid = 'mission-year' ] ):first-of-type {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 27px;
+  margin-top: 27px;
+}
+
+.card-infos {
+  align-items: center;
+  border-top: 1px solid white;
+  display: flex;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  gap: 20px;
+  height: 50%;
+  justify-content: center;
+  line-height: 120%;
+}
