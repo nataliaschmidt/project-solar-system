@@ -4,26 +4,26 @@ pipeline {
     stages {
         stage('Baixar fonte') {
             steps { 
-                    sh 'ssh ubuntu@172.17.0.1 "rm -rf /home/ubuntu/apps/SolarSystem"'
-                    sh 'ssh ubuntu@172.17.0.1 "mkdir -p /home/ubuntu/apps/SolarSystem"'
-                    sh 'scp -r /var/jenkins_home/workspace/SolarSystem/. ubuntu@172.17.0.1:/home/ubuntu/apps/SolarSystem'
+                    sh 'ssh ubuntu@172.17.0.1 "rm -rf /home/ubuntu/apps/SistemaSolar"'
+                    sh 'ssh ubuntu@172.17.0.1 "mkdir -p /home/ubuntu/apps/SistemaSolar"'
+                    sh 'scp -r /var/jenkins_home/workspace/SistemaSolar/. ubuntu@172.17.0.1:/home/ubuntu/apps/SistemaSolar'
             } 
         }
         stage('Instalar') {
             steps {
-                        sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SolarSystem;npm install"'
+                        sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SistemaSolar;npm install"'
             }
         }
         stage('Construir') {
             steps {
-                        sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SolarSystem;npm run build"'
+                        sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SistemaSolar;npm run build"'
             }
         }
         stage('Iniciar') { 
             steps {
-                    sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SolarSystem;export JENKINS_NODE_COOKIE=dontKillMe;pm2 stop SolarSystem -s"'
-                    sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SolarSystem;export JENKINS_NODE_COOKIE=dontKillMe;pm2 delete SolarSystem -s"'
-                    sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SolarSystem;pm2 start -n SolarSystem npm -- start;pm2 save --force"' 
+                    sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SistemaSolar;export JENKINS_NODE_COOKIE=dontKillMe;pm2 stop SistemaSolar -s"'
+                    sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SistemaSolar;export JENKINS_NODE_COOKIE=dontKillMe;pm2 delete SistemaSolar -s"'
+                    sh 'ssh ubuntu@172.17.0.1 "cd /home/ubuntu/apps/SistemaSolar;pm2 start -n SistemaSolar npm -- start;pm2 save --force"' 
             }
         }
     }
